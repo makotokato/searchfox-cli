@@ -141,6 +141,13 @@ struct Args {
     js: bool,
 
     #[arg(
+        long = "java",
+        help = "Filter results to Java files only",
+        long_help = "Filter results to Java files only (.java)"
+    )]
+    java: bool,
+
+    #[arg(
         long = "calls-from",
         help = "Find functions called by the specified symbol",
         long_help = "Search for functions called by the specified symbol using call graph analysis.\nExample: --calls-from 'mozilla::dom::AudioContext::CreateGain'"
@@ -327,6 +334,7 @@ async fn main() -> Result<()> {
         c_lang: args.c_lang,
         webidl: args.webidl,
         js: args.js,
+        java: args.java,
         category_filter,
     };
 

@@ -48,6 +48,7 @@ impl SearchfoxClient {
         c_lang: Option<bool>,
         webidl: Option<bool>,
         js: Option<bool>,
+        java: Option<bool>,
     ) -> PyResult<Vec<(String, usize, String)>> {
         let options = SearchOptions {
             query,
@@ -62,6 +63,7 @@ impl SearchfoxClient {
             c_lang: c_lang.unwrap_or(false),
             webidl: webidl.unwrap_or(false),
             js: js.unwrap_or(false),
+            java: java.unwrap_or(false),
             category_filter: searchfox_lib::CategoryFilter::All,
         };
 
