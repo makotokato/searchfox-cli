@@ -274,6 +274,10 @@ Ex: --define 'AudioContext::AudioContext' --link
 
 #[tokio::main]
 async fn main() -> Result<()> {
+    #[cfg(unix)]
+    unsafe {
+        libc::signal(libc::SIGPIPE, libc::SIG_DFL);
+    }
     let version_checker = VersionChecker::new("searchfox-cli", env!("CARGO_PKG_VERSION"));
     version_checker.check_async();
 
