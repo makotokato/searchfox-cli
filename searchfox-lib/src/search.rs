@@ -126,7 +126,7 @@ impl SearchOptions {
             return true;
         }
 
-        if self.java && path_lower.ends_with(".java") {
+        if self.java && (path_lower.ends_with(".java") || path_lower.ends_with(".kt")) {
             return true;
         }
 

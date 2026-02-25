@@ -142,8 +142,9 @@ struct Args {
 
     #[arg(
         long = "java",
-        help = "Filter results to Java files only",
-        long_help = "Filter results to Java files only (.java)"
+        visible_aliases = ["kt"],
+        help = "Filter results to Java/Kotlin files only",
+        long_help = "Filter results to Java/Kotlin files only (.java, .kt)"
     )]
     java: bool,
 
@@ -259,7 +260,7 @@ fn print_llm_help() {
 --get-file <F> [--lines <R>] R=10-20|10|10-|-20
 --calls-from <S>|--calls-to <S>|--calls-between <A,B> [--depth <N>]
 --field-layout <C> C++ class memory layout
---cpp|--c|--webidl|--js file type filters
+--cpp|--c|--webidl|--js|--java/--kt file type filters
 --exclude-tests|--exclude-generated|--only-tests|--only-generated|--only-normal
 -R <repo> mozilla-central(default)|autoland|mozilla-beta|mozilla-release|mozilla-esr*|comm-central
 --blame commit info|--log-requests
