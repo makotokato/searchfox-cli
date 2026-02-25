@@ -24,3 +24,4 @@ classifiers = [
 python-source = "python"
 module-name = "searchfox"
 bindings = "pyo3"
+manifest-path = "searchfox-py/Cargo.toml"
