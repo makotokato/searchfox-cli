@@ -147,7 +147,8 @@ class SearchfoxClient:
 
     def search(self, query=None, path=None, case=False, regexp=False,
                limit=50, context=None, symbol=None, id=None,
-               cpp=False, c_lang=False, webidl=False, js=False)
+               cpp=False, c_lang=False, webidl=False, js=False,
+               java=False)
 
     def get_file(self, path: str) -> str
 

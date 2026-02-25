@@ -32,6 +32,7 @@ def search(
     c_lang=False,
     webidl=False,
     js=False,
+    java=False,
     log_requests=False,
 ):
     """
@@ -51,6 +52,7 @@ def search(
         c_lang: Filter to C files only
         webidl: Filter to WebIDL files only
         js: Filter to JavaScript files only
+        java: Filter to Java files only
         log_requests: Enable request logging
 
     Returns:
@@ -70,6 +72,7 @@ def search(
         c_lang=c_lang,
         webidl=webidl,
         js=js,
+        java=java,
     )
 
 

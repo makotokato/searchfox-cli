@@ -64,6 +64,7 @@ pub struct SearchOptions {
     pub c_lang: bool,
     pub webidl: bool,
     pub js: bool,
+    pub java: bool,
     pub category_filter: CategoryFilter,
 }
 
@@ -82,6 +83,7 @@ impl Default for SearchOptions {
             c_lang: false,
             webidl: false,
             js: false,
+            java: false,
             category_filter: CategoryFilter::All,
         }
     }
@@ -89,7 +91,7 @@ impl Default for SearchOptions {
 
 impl SearchOptions {
     pub fn matches_language_filter(&self, path: &str) -> bool {
-        if !self.cpp && !self.c_lang && !self.webidl && !self.js {
+        if !self.cpp && !self.c_lang && !self.webidl && !self.js && !self.java {
             return true;
         }
 
@@ -121,6 +123,10 @@ impl SearchOptions {
                 || path_lower.ends_with(".jsx")
                 || path_lower.ends_with(".tsx"))
         {
+            return true;
+        }
+
+        if self.java && path_lower.ends_with(".java") {
             return true;
         }
 
